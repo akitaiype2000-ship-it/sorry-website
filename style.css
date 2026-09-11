@@ -1,0 +1,771 @@
+/* ===========================
+   Google Font & Reset
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* ===========================
+   Body
+=========================== */
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+    overflow-y:auto;
+
+    background:linear-gradient(
+        -45deg,
+        #ff9a9e,
+        #fad0c4,
+        #fbc2eb,
+        #a18cd1
+    );
+
+    background-size:400% 400%;
+    animation:bgAnimation 12s ease infinite;
+}
+
+/* ===========================
+   Animated Background
+=========================== */
+
+@keyframes bgAnimation{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+/* ===========================
+   Hero Card
+=========================== */
+
+.hero{
+
+    width:90%;
+    max-width:750px;
+
+    margin:80px auto;
+
+    padding:50px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+    color:white;
+
+    text-align:center;
+
+    animation:fadeIn 1.5s;
+
+}
+/* ===========================
+   Hero Text
+=========================== */
+
+.hero h1{
+
+    font-size:4rem;
+
+    font-family:'Dancing Script',cursive;
+
+    margin-bottom:15px;
+
+    text-shadow:
+
+        0 0 8px white,
+
+        0 0 18px hotpink,
+
+        0 0 30px deeppink;
+
+}
+
+.hero p{
+    font-size:1.25rem;
+    line-height:0.85;
+    max-width:650px;
+    margin:20px auto;
+}
+/* ===========================
+   Buttons
+=========================== */
+
+button{
+
+    margin-top:30px;
+
+    padding:15px 40px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#ff4b91;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s ease;
+
+    box-shadow:0 0 20px #ff4b91;
+
+}
+
+button:hover{
+
+    transform:translateY(-5px) scale(1.03);
+
+    background:white;
+
+    color:#ff4b91;
+
+    box-shadow:0 0 35px white;
+
+}
+/* ===========================
+   Fade Animation
+=========================== */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* ===========================
+   Floating Hearts
+=========================== */
+
+.hearts{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+.heart{
+
+    position:absolute;
+
+    bottom:-40px;
+
+    color:white;
+
+    opacity:.8;
+
+    animation:float 8s linear infinite;
+
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0) scale(.5);
+
+        opacity:0;
+
+    }
+
+    15%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(-120vh) scale(1.8);
+
+        opacity:0;
+
+    }
+
+}
+/* ===========================
+   Gallery
+=========================== */
+
+.gallery{
+
+    margin-top:70px;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+.gallery h2{
+
+    font-size:2.8rem;
+
+    margin-bottom:30px;
+
+    font-family:'Dancing Script',cursive;
+
+}
+
+.photos{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:25px;
+
+}
+
+.photos img{
+
+    width:250px;
+
+    height:320px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+
+}
+
+.photos img:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 15px 35px hotpink;
+
+}
+/* ===========================
+   Music
+=========================== */
+
+.music{
+
+    margin-top:70px;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+.music h2{
+
+    font-size:2.5rem;
+
+    margin-bottom:20px;
+
+    font-family:'Dancing Script',cursive;
+
+}
+
+audio{
+
+    width:360px;
+
+    max-width:90%;
+
+}
+/* ===========================
+   Image Popup
+=========================== */
+
+.popup{
+
+    display:none;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,.85);
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.popup img{
+
+    max-width:90%;
+    max-height:85%;
+
+    border-radius:20px;
+
+    box-shadow:0 0 30px rgba(255,255,255,.4);
+
+}
+
+.popup span{
+
+    position:absolute;
+
+    top:20px;
+    right:35px;
+
+    color:white;
+
+    font-size:50px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.popup span:hover{
+
+    transform:scale(1.2);
+
+    color:#ffb3d9;
+
+}
+/* ===========================
+   Last Letter
+=========================== */
+
+.next-page{
+
+    width:90%;
+
+    max-width:700px;
+
+    margin:90px auto;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+.next-page h2{
+
+    font-size:3rem;
+
+    font-family:'Dancing Script',cursive;
+
+    margin-bottom:20px;
+
+}
+
+.next-page p{
+
+    font-size:1.25rem;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
+}
+
+.next-page button{
+
+    animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+        box-shadow:0 0 15px hotpink;
+
+    }
+
+    50%{
+
+        transform:scale(1.05);
+
+        box-shadow:0 0 35px hotpink;
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        box-shadow:0 0 15px hotpink;
+
+    }
+
+}
+/* ===========================
+   Forgive Page
+=========================== */
+
+.forgive-page{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    position:relative;
+    padding:30px;
+}
+
+.forgive-page .hero{
+    margin:0;
+    padding:35px;
+    max-width:700px;
+}
+
+.buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:35px;
+
+    margin-top:40px;
+
+    flex-wrap:wrap;
+
+}
+
+#yesBtn{
+
+    background:#ff4b91;
+
+    min-width:180px;
+
+    box-shadow:
+
+        0 0 20px hotpink,
+
+        0 0 40px deeppink;
+
+    animation:yesGlow 2s infinite;
+
+}
+
+@keyframes yesGlow{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.08);
+
+        box-shadow:
+
+            0 0 35px hotpink,
+
+            0 0 60px deeppink;
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+#noBtn{
+
+    background:#555;
+
+    min-width:170px;
+
+    position:relative;
+
+}
+/* ===========================
+   Success Screen
+=========================== */
+
+#success{
+
+    display:none;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:linear-gradient(135deg,#ff6ec4,#7873f5);
+
+    color:white;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:40px;
+
+    z-index:9999;
+
+    animation:fadeIn 1s;
+
+}
+
+#success h1{
+
+    font-size:6rem;
+
+    margin-bottom:20px;
+
+}
+
+#success h2{
+
+    font-size:3rem;
+
+    font-family:'Dancing Script',cursive;
+
+    margin-bottom:20px;
+
+}
+
+#success p{
+
+    max-width:700px;
+
+    font-size:1.3rem;
+
+    line-height:2;
+
+}
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width:768px){
+
+.hero{
+
+    width:95%;
+
+    padding:30px 20px;
+
+}
+
+.hero h1{
+
+    font-size:2.8rem;
+
+}
+
+.hero p{
+
+    font-size:1.05rem;
+
+}
+
+.gallery h2,
+.music h2,
+.next-page h2{
+
+    font-size:2.2rem;
+
+}
+
+.photos img{
+
+    width:90%;
+
+    max-width:300px;
+
+    height:auto;
+
+}
+
+button{
+
+    width:90%;
+
+    max-width:300px;
+
+}
+
+.buttons{
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+audio{
+
+    width:90%;
+
+}
+
+#success h1{
+
+    font-size:4rem;
+
+}
+
+#success h2{
+
+    font-size:2.2rem;
+
+}
+
+#success p{
+
+    font-size:1.1rem;
+
+}
+
+}
+.forgive-page .hero{
+    padding:40px;
+    max-width:700px;
+    margin:40px auto;
+}
+
+.forgive-page .hero p{
+    margin:25px auto;
+    line-height:1.8;
+}
+
+.buttons{
+    margin-top:35px;
+}
+
+/* ===========================
+Beautiful Success Animation
+=========================== */
+
+@keyframes fadeSuccess{
+
+    from{
+
+        opacity:0;
+        transform:scale(.8);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:scale(1);
+
+    }
+
+}
+
+#success{
+
+    backdrop-filter:blur(8px);
+
+}
+
+#success h1{
+
+    animation:heartBeat 1s infinite alternate;
+
+}
+
+@keyframes heartBeat{
+
+    from{
+
+        transform:scale(1);
+
+    }
+
+    to{
+
+        transform:scale(1.15);
+
+    }
+
+}
+
+#success h2{
+
+    text-shadow:
+
+        0 0 10px white,
+
+        0 0 20px hotpink,
+
+        0 0 35px deeppink;
+
+}
